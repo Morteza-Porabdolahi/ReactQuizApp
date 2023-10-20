@@ -133,7 +133,7 @@ export function App() {
   const possiblePoints = questions.reduce((acc, question) => acc + question.points, 0)
 
   useEffect(() => {
-    fetch(`http://localhost:3000/questions?${selectedDiff ? `difficulty=${selectedDiff}` : ''}`).then(res => res.json()).then(questions => {
+    fetch(`/api?${selectedDiff ? `difficulty=${selectedDiff}` : ''}`).then(res => res.json()).then(questions => {
       dispatch({
         type: 'dataReceived',
         payload: questions,
