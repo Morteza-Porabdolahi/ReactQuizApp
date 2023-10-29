@@ -152,5 +152,5 @@ const questions = [
 ]
 
 export default function handler(request, response) {
-  return response.status(200).send(request.query.difficulty !== undefined ? questions.filter(question => question.difficulty === request.query.difficulty) : questions);
+  return response.status(200).json(request.query.difficulty !== undefined ? questions.filter(question => question.difficulty === request.query.difficulty) : questions);
 }

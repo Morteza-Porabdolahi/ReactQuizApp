@@ -1,4 +1,8 @@
-export function Options({ question, dispatch, userAnswers, questionIndex }) {
+import { useQuiz } from "../context/QuizContext";
+
+export function Options() {
+  const { question, dispatch, userAnswers, questionIndex } = useQuiz();
+  
   return (
     <div className="options">
       {question.options.map((option, i) => (
